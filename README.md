@@ -10,6 +10,14 @@ Utility for managing hardlinks on macOS
 
 This way, it's easy to know if/when a certain directory is hardlinked, and to what locations. The file `.hardlinks` should be added to `.gitignore`.
 
+## Requirement
+
+`hardlink` should be installed and available as command `hln`
+
+```bash
+brew install hardlink-osx
+```
+
 ## Install
 
 ```bash
