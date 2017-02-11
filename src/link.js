@@ -33,7 +33,7 @@ export default function link({ src, dest, options }) {
     process.exit(1)
   }
 
-  log(`Hardlink: ${src} <-> ${dest}`)
+  log(`Hardlink: ${dest} <-> ${src}`)
 
   // Resolve paths, including symbolic links
   src = fs.realpathSync(path.resolve(src))

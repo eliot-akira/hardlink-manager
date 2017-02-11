@@ -32,6 +32,10 @@ Create hardlink
 hlnm [source] [destination]
 ```
 
+If destination is not specified, the original folder name will be used.
+
+---
+
 Remove hardlink
 
 ```bash

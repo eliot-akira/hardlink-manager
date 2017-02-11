@@ -1,13 +1,13 @@
 {
   "name": "hardlink-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility for managing hardlinks on macOS",
   "main": "build/index.js",
   "bin": {
     "hlnm": "bin/cli"
   },
   "scripts": {
-    "start": "bob dev",
+    "dev": "bob dev",
     "build": "bob build",
     "clean": "rm -rf build",
     "prepublish": "npm run build"
@@ -24,7 +24,7 @@
     "mkdirp": "^0.5.1"
   },
   "keywords": [
-    "hln", "hardlink"
+    "hln", "hardlink", "hard link"
   ],
   "author": "Eliot Akira",
   "repository": {
