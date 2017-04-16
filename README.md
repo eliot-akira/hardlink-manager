@@ -4,7 +4,7 @@ Utility for managing hardlinks on macOS
 
 ## Purpose
 
-[`hardlink`](https://github.com/selkhateeb/hardlink) is a useful tool for creating directory hardlinks. However, it can be difficult to remember where all the hardlinks exist for a ceratin directory, if any. Also, there is a risk of removing a hardlinked directory with `rm -rf` and all other linked directories will disappear at once :fire:.
+[`hardlink`](https://github.com/selkhateeb/hardlink) is a useful tool for creating directory hardlinks. However, it can be difficult to remember where all the hardlinks exist for a certain directory, if any. Also, there is a risk of removing a hardlinked directory with `rm -rf` and all other linked directories will disappear at once :fire:.
 
 `hardlink-manager` is a wrapper that stores all hardlink locations in a file called `.hardlinks` at the root of the linked directory. When no more hardlinks exist, the file is removed.
 
@@ -40,4 +40,12 @@ Remove hardlink
 
 ```bash
 hlnm -u [destination]
+```
+
+---
+
+List all hardlinks under current directory
+
+```bash
+hlnm -l
 ```

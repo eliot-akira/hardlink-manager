@@ -3,10 +3,11 @@ export default function usage() {
   console.log(
 `Usage:
 
-  hlnm [source] [destination] - hard links source directory to destination
-  hlnm -u [destination] - unlinks destination directory
+  hlnm [source] [destination] - create a hardlink of source directory to destination
+  hlnm -u [destination] - unlink destination directory
+  hlnm -l - list all hardlinks under current directory
 
-Hardlinked paths are kept in .hardlinks for reference`
+Linked paths are kept in .hardlinks inside the directory`
   )
   process.exit()
 }
