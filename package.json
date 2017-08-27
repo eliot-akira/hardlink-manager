@@ -1,10 +1,10 @@
 {
   "name": "hardlink-manager",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Utility for managing hardlinks on macOS",
   "main": "build/index.js",
   "bin": {
-    "hlnm": "bin/cli"
+    "hlnm": "bin/hlnm"
   },
   "scripts": {
     "dev": "bob dev",
@@ -25,7 +25,7 @@
     "mkdirp": "^0.5.1"
   },
   "dependencies": {
-    "bob-builder": "^0.4.1"
+    "bob-builder": "^0.5"
   },
   "keywords": [
     "hln",

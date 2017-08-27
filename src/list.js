@@ -20,6 +20,6 @@ export default function list() {
 
   hardlinks.forEach(link => {
     const folder = path.relative(currentPath, path.dirname(link))
-    log(folder)
+    log(folder || '.')
   })
 }

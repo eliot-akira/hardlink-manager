@@ -10,7 +10,9 @@ export const run = (command, options = {}) => {
     execSync(command, { stdio: 'inherit', ...options })
   } catch(e) {
     // Error is streamed
+    return false
   }
+  return true
 }
 
 export const getLinks = src => {

@@ -36,18 +36,21 @@ export default function link({ src, dest, options }) {
   log(`Hardlink: ${dest} <-> ${src}`)
 
   // Resolve paths, including symbolic links
-  src = fs.realpathSync(path.resolve(src))
-  dest = path.resolve(dest)
+  const fullSrc = fs.realpathSync(path.resolve(src))
+  const fullDest = path.resolve(dest)
 
+  const links = getLinks(fullSrc).filter(f => f!==fullDest && f!==fullSrc)
 
-  const links = getLinks(src).filter(f => f!==dest && f!==src)
+  links.push(fullSrc, fullDest)
 
-  links.push(src, dest)
+  if (run(`hln ${fullSrc} ${fullDest}`)) {
 
-  setLinks(src, links)
+    setLinks(fullSrc, links)
 
-  run(`hln ${src} ${dest}`)
+    log('Remember: never "rm -rf" a hardlinked directory; use "hlnm -u"')
 
-  log('Remember: never "rm -rf" a hardlinked directory; use "hlnm -u"')
+  } else {
+    log(`Failed to create hardlink`)
+  }
 
 }
