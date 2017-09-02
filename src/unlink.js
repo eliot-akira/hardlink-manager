@@ -17,18 +17,17 @@ export default function({ src, options }) {
 
   const links = getLinks(fullSrc).filter(f => f!==fullSrc)
 
+  if (links.length<2) {
+    log('No more hardlinks')
+    if (links.length) log(`Original: ${links[0]}`)
+    emptyLinks(fullSrc)
+  } else {
+    log('Remaining hardlinks:')
+    log(links.map(l => `  ${l}`).join("\n"))
+    setLinks(fullSrc, links)
+  }
 
   if (run(`hln -u ${fullSrc}`)) {
-
-    if (links.length<2) {
-      log('No more hardlinks')
-      if (links.length) log(`Original: ${links[0]}`)
-      emptyLinks(fullSrc)
-    } else {
-      log('Remaining hardlinks:')
-      log(links.map(l => `  ${l}`).join("\n"))
-      setLinks(fullSrc, links)
-    }
 
   } else {
     log(`Failed to remove hardlink`)
